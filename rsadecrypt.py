@@ -9,7 +9,7 @@ e = 1292107475330115076780889
 # private key
 d = pow(e, -1, phi_n)
 
-with open('message.txt', 'r') as file:
+with open('encrypted.txt', 'r') as file:
     # read text by lines
     lines_c_text = file.readlines()
     for line in lines_c_text:
