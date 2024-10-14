@@ -8,6 +8,17 @@ import random
 import math
 
 n = 708779824646737390614738439729
+def modular_multiply(a, b, mod):
+    result = 0
+    a = a % mod
+
+    while b > 0:
+        if b % 2 == 1:  # If b is odd, add a to result
+            result = (result + a) % mod
+        a = (a * 2) % mod  # Double a and reduce modulo mod
+        b //= 2  # Divide b by 2
+
+    return result
 
 def pollards_rho(n):
 
