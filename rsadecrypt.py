@@ -1,3 +1,10 @@
+"""
+Author: Aaron Huang
+Last Modified: 10/14/2024
+Description:
+    RSA Encryption and Decryption for Homework
+"""
+
 n = 708779824646737390614738439729
     
 # do I need to create code to find the prime factorization of n?
@@ -20,11 +27,14 @@ with open('message.txt', 'r') as file:
 
 # encrypt a message into numbers written on a text file
 with open("encrypted.txt", 'w') as file:
-    message = "My name is Aaron Huang and my hometown is Andover, MA."
-    for char in message:
-        unicode = ord(char)
-        c = pow(unicode, e, n)
-        file.writelines(str(c) + '\n')
+    # message to encrypt
+    message_back = "My name is Aaron Huang and my hometown is Andover, MA."
+    for char in message_back:
+        # convert back to the int representation
+        unicode_message = ord(char)
+        ciphertext = pow(unicode_message, e, n)
+        # make the encrypted text file look like the original
+        file.writelines(str(cipher_text) + '\n')
         
 
 
