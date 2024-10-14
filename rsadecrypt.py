@@ -4,6 +4,8 @@ Last Modified: 10/14/2024
 Description:
     RSA Encryption and Decryption for Homework
 """
+import random
+import math
 
 n = 708779824646737390614738439729
 
