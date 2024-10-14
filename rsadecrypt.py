@@ -6,7 +6,28 @@ Description:
 """
 
 n = 708779824646737390614738439729
-    
+
+def pollards_rho(n):
+
+    x = random.randint(2, n-1)
+    y = x 
+    c = random.randint(1, n-1)
+    d = 1
+
+    def f(x, n, c):
+        return (modular_multiply(x,x,n)+c) % n
+
+    while d == 1:
+        x = f(x, n, c)
+        y = f(f(y,n,c),n,c)
+        d = gcd(abs(x-y), n)
+
+        if d == n:
+            return pollards_rho(n)
+
+    return d    
+
+pollards_rho(100000000)
 # do I need to create code to find the prime factorization of n?
 n = 689343651926443*1028195186342803 # from Wolfram Alpha
 phi_n = (689343651926443-1)*(1028195186342803-1) # by definition 
@@ -32,7 +53,7 @@ with open("encrypted.txt", 'w') as file:
     for char in message_back:
         # convert back to the int representation
         unicode_message = ord(char)
-        ciphertext = pow(unicode_message, e, n)
+        cipher_text = pow(unicode_message, e, n)
         # make the encrypted text file look like the original
         file.writelines(str(cipher_text) + '\n')
         
