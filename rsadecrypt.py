@@ -9,6 +9,7 @@ e = 1292107475330115076780889
 # private key
 d = pow(e, -1, phi_n)
 
+# decrypt a text file's message
 with open('message.txt', 'r') as file:
     # read text by lines
     lines_c_text = file.readlines()
@@ -17,6 +18,7 @@ with open('message.txt', 'r') as file:
         # convert the decrypted integers into their respective unicode characters
         print(chr(message), end = "")
 
+# encrypt a message into numbers written on a text file
 with open("encrypted.txt", 'w') as file:
     message = "My name is Aaron Huang and my hometown is Andover, MA."
     for char in message:
