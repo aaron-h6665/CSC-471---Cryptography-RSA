@@ -1,15 +1,15 @@
 n = 708779824646737390614738439729
-
+    
 # do I need to create code to find the prime factorization of n?
-n = 689343651926443*1028195186342803 
-phi_n = (689343651926443-1)*(1028195186342803-1)
+n = 689343651926443*1028195186342803 # from Wolfram Alpha
+phi_n = (689343651926443-1)*(1028195186342803-1) # by definition 
 
 e = 1292107475330115076780889
 
 # private key
 d = pow(e, -1, phi_n)
 
-with open('encrypted.txt', 'r') as file:
+with open('message.txt', 'r') as file:
     # read text by lines
     lines_c_text = file.readlines()
     for line in lines_c_text:
