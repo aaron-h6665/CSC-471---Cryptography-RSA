@@ -6,6 +6,7 @@ Description:
 """
 import random
 import math
+from math import gcd
 
 n = 708779824646737390614738439729
 def modular_multiply(a, b, mod):
